@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIカンパニー | AI活用支援で業務改革を並走</title>
+  <meta name="description" content="AIカンパニーは、業務棚卸しから文章化、リサーチ、自動化、運用設計まで並走するAI活用支援チームです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --teal:      #008d8f;
+      --teal-dark: #006466;
+      --teal-deep: #003d3e;
+      --mint:      #e8faf9;
+      --line:      #b8e2df;
+      --ink:       #1a2f38;
+      --muted:     #5c7a84;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.75;
+    }
+
+    /* reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ticker */
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-inner {
+      display: flex;
+      width: max-content;
+      animation: ticker 30s linear infinite;
+    }
+
+    /* sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 24px;
+      z-index: 50;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-cta {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+      }
+      .sticky-cta a { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+<!-- ===== HEADER ===== -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-teal-100" style="border-color:var(--line)">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-baseline gap-2 no-underline">
+      <span class="font-black text-xl tracking-tight" style="font-family:'Inter',sans-serif; color:var(--teal-dark)">AI<span style="color:var(--teal)">COMPANY</span></span>
+      <span class="text-xs font-bold" style="color:var(--muted)">business reform</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#problem" class="text-sm font-medium no-underline transition hover:opacity-70" style="color:var(--muted)">課題</a>
+      <a href="#solution" class="text-sm font-medium no-underline transition hover:opacity-70" style="color:var(--muted)">解決策</a>
+      <a href="#team" class="text-sm font-medium no-underline transition hover:opacity-70" style="color:var(--muted)">チーム</a>
+      <a href="#faq" class="text-sm font-medium no-underline transition hover:opacity-70" style="color:var(--muted)">FAQ</a>
+      <a href="mailto:zodiacm369@gmail.com?subject=AI活用支援の相談"
+         class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold text-white transition hover:opacity-90"
+         style="background:var(--teal)">
+        相談する →
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="top" class="relative overflow-hidden" style="background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 50%, #00575a 100%);">
+  <!-- grid pattern -->
+  <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.15) 0 1px, transparent 1px 56px), repeating-linear-gradient(90deg, rgba(255,255,255,.15) 0 1px, transparent 1px 56px);"></div>
+  <!-- glow -->
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20 blur-3xl" style="background: radial-gradient(circle, #00e5e8, transparent 70%);"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 py-28 md:py-36">
+    <div class="max-w-2xl">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-8 reveal"
+            style="background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3); color:rgba(255,255,255,.9); letter-spacing:.1em;">
+        AI活用支援・業務改革
+      </span>
+      <h1 class="text-4xl md:text-6xl font-black leading-tight text-white mb-6 reveal" style="font-family:'Inter','Noto Sans JP',sans-serif; letter-spacing:-.02em;">
+        AI活用支援で、<br>業務改革を<span style="color:#5ef8f4">並走</span>。
+      </h1>
+      <p class="text-lg md:text-xl mb-10 reveal" style="color:rgba(255,255,255,.8); line-height:1.8;">
+        生成AIを入れて終わりにしない。<br>
+        業務の棚卸しから、文章化、リサーチ、自動化、運用設計まで、<br class="hidden md:block">
+        現場で使える形に整えます。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 reveal">
+        <a href="mailto:zodiacm369@gmail.com?subject=AI活用支援の相談"
+           class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base transition hover:opacity-90 hover:-translate-y-0.5"
+           style="background:#5ef8f4; color:var(--teal-deep); box-shadow:0 12px 32px rgba(94,248,244,.25);">
+          AI活用を相談する →
+        </a>
+        <a href="https://maloncafe.shop/" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-base transition hover:opacity-90"
+           style="background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.3); color:white;">
+          コーポレートサイト
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- wave -->
+  <div class="relative" style="height:60px; margin-top:-1px;">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:100%;">
+      <path d="M0 60L1440 60L1440 0C1200 48 960 60 720 48C480 36 240 0 0 24L0 60Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== TICKER ===== -->
+<div class="overflow-hidden py-4 border-y" style="border-color:var(--line); background:var(--mint);">
+  <div class="ticker-inner whitespace-nowrap text-sm font-bold" style="color:var(--teal-dark);">
+    <span class="px-8">業務棚卸し</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">AI活用設計</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">リサーチ自動化</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">文章・編集</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">運用設計</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">仕組み化</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">秘書業務</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">業務改革伴走</span><span class="px-2" style="color:var(--teal)">／</span>
+    <!-- duplicate for seamless loop -->
+    <span class="px-8">業務棚卸し</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">AI活用設計</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">リサーチ自動化</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">文章・編集</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">運用設計</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">仕組み化</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">秘書業務</span><span class="px-2" style="color:var(--teal)">／</span>
+    <span class="px-8">業務改革伴走</span><span class="px-2" style="color:var(--teal)">／</span>
+  </div>
+</div>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem" class="py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--teal); letter-spacing:.2em;">Problem</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-4" style="color:var(--teal-dark); font-family:'Inter','Noto Sans JP',sans-serif;">
+        AI導入は、ツールを入れるだけでは<br class="hidden md:block">定着しない。
+      </h2>
+      <p class="text-base max-w-xl mx-auto" style="color:var(--muted);">
+        便利そうに見えても、現場の作業に落ちないまま終わると、<br class="hidden md:block">毎日の業務は変わりません。
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="reveal rounded-2xl p-8 border" style="border-color:var(--line); background:var(--mint);">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm mb-5" style="background:var(--teal);">1</div>
+        <p class="font-bold text-base mb-2" style="color:var(--teal-dark);">ChatGPTを触ったが、業務で使い続けられない</p>
+        <p class="text-sm" style="color:var(--muted);">試しに使ってみたが日常業務に組み込めず、結局元の作業に戻ってしまう。</p>
+      </div>
+      <div class="reveal rounded-2xl p-8 border" style="border-color:var(--line); background:var(--mint);">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm mb-5" style="background:var(--teal);">2</div>
+        <p class="font-bold text-base mb-2" style="color:var(--teal-dark);">文章・調査・整理・自動化が別々に止まっている</p>
+        <p class="text-sm" style="color:var(--muted);">それぞれ試してみたが連携できず、全体の業務改善につながっていない。</p>
+      </div>
+      <div class="reveal rounded-2xl p-8 border" style="border-color:var(--line); background:var(--mint);">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm mb-5" style="background:var(--teal);">3</div>
+        <p class="font-bold text-base mb-2" style="color:var(--teal-dark);">誰が設計し、誰が運用するか決まっていない</p>
+        <p class="text-sm" style="color:var(--muted);">AI活用の責任者が不明確で、導入後の改善サイクルが回らない。</p>
+      </div>
+    </div>
+
+    <!-- CTA bridge -->
+    <div class="text-center mt-14 reveal">
+      <a href="mailto:zodiacm369@gmail.com?subject=AI活用支援の相談"
+         class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-sm transition hover:opacity-90"
+         style="background:var(--teal); box-shadow:0 8px 24px rgba(0,141,143,.2);">
+        AI活用支援について相談する →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section id="solution" class="py-24" style="background: linear-gradient(180deg, var(--mint) 0%, white 100%);">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--teal); letter-spacing:.2em;">Solution</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-4" style="color:var(--teal-dark); font-family:'Inter','Noto Sans JP',sans-serif;">
+        設計と実務の両方から、<br class="hidden md:block">AI活用を前に進める。
+      </h2>
+      <p class="text-base max-w-xl mx-auto" style="color:var(--muted);">
+        AIカンパニーは、業務改革を構想で止めません。<br class="hidden md:block">
+        代表のマスターZが方針を見立て、担当メンバーが実務まで並走します。
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="reveal bg-white rounded-2xl p-8 border shadow-sm transition hover:-translate-y-1 hover:shadow-md" style="border-color:var(--line);">
+        <div class="text-3xl mb-5">🗂️</div>
+        <h3 class="font-black text-lg mb-3" style="color:var(--teal-dark);">業務棚卸し</h3>
+        <p class="text-sm" style="color:var(--muted);">作業・判断・手戻り・属人化している工程を洗い出し、AI化できる箇所を見える化します。</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-8 border shadow-sm transition hover:-translate-y-1 hover:shadow-md" style="border-color:var(--line);">
+        <div class="text-3xl mb-5">🤖</div>
+        <h3 class="font-black text-lg mb-3" style="color:var(--teal-dark);">AI活用設計</h3>
+        <p class="text-sm" style="color:var(--muted);">AIに任せる部分と人が判断すべき部分を切り分け、現場で動く運用設計に落とし込みます。</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-8 border shadow-sm transition hover:-translate-y-1 hover:shadow-md" style="border-color:var(--line);">
+        <div class="text-3xl mb-5">🔄</div>
+        <h3 class="font-black text-lg mb-3" style="color:var(--teal-dark);">実装と改善</h3>
+        <p class="text-sm" style="color:var(--muted);">文章化・調査・自動化を小さく試し、数字で検証しながら日々の運用へ定着させます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--teal); letter-spacing:.2em;">Flow</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-4" style="color:var(--teal-dark); font-family:'Inter','Noto Sans JP',sans-serif;">
+        相談から改善まで、迷わず進める。
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="reveal flex gap-5 items-start">
+        <div class="flex-shrink-0 w-16 h-16 rounded-xl flex flex-col items-center justify-center text-white text-xs font-black" style="background:linear-gradient(135deg, var(--teal), #3969f2);">
+          <span class="text-lg leading-none">01</span>
+          <span style="font-size:10px; opacity:.8;">STEP</span>
+        </div>
+        <div class="flex-1 rounded-xl p-6 border" style="border-color:var(--line); background:var(--mint);">
+          <p class="font-black text-base mb-1" style="color:var(--teal-dark);">メールで相談</p>
+          <p class="text-sm" style="color:var(--muted);">困っている業務や、AIで変えたい作業を共有します。まだ整理できていなくても大丈夫です。</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-5 items-start">
+        <div class="flex-shrink-0 w-16 h-16 rounded-xl flex flex-col items-center justify-center text-white text-xs font-black" style="background:linear-gradient(135deg, var(--teal), #3969f2);">
+          <span class="text-lg leading-none">02</span>
+          <span style="font-size:10px; opacity:.8;">STEP</span>
+        </div>
+        <div class="flex-1 rounded-xl p-6 border" style="border-color:var(--line); background:var(--mint);">
+          <p class="font-black text-base mb-1" style="color:var(--teal-dark);">業務を整理</p>
+          <p class="text-sm" style="color:var(--muted);">作業工程・情報・判断ポイントを棚卸しし、AI化すべき優先順位を明確にします。</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-5 items-start">
+        <div class="flex-shrink-0 w-16 h-16 rounded-xl flex flex-col items-center justify-center text-white text-xs font-black" style="background:linear-gradient(135deg, var(--teal), #3969f2);">
+          <span class="text-lg leading-none">03</span>
+          <span style="font-size:10px; opacity:.8;">STEP</span>
+        </div>
+        <div class="flex-1 rounded-xl p-6 border" style="border-color:var(--line); background:var(--mint);">
+          <p class="font-black text-base mb-1" style="color:var(--teal-dark);">試作して改善</p>
+          <p class="text-sm" style="color:var(--muted);">プロンプト・運用・自動化を小さく実装し、数字で検証しながら改善サイクルを回します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team" class="py-24" style="background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-dark) 100%);">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#5ef8f4; letter-spacing:.2em;">Team</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-4 text-white" style="font-family:'Inter','Noto Sans JP',sans-serif;">
+        メンバー紹介
+      </h2>
+      <p class="text-base max-w-xl mx-auto" style="color:rgba(255,255,255,.7);">
+        AIカンパニーは、代表と専門担当が役割を分けて、<br class="hidden md:block">
+        戦略から実務まで一つのチームとして支援します。
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <!-- 代表 -->
+      <div class="reveal rounded-2xl p-6 col-span-1 md:col-span-3" style="background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15);">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-xl flex items-center justify-center font-black text-sm" style="background:rgba(94,248,244,.2); color:#5ef8f4; border:1px solid rgba(94,248,244,.3);">代表</div>
+          <div>
+            <p class="font-black text-lg text-white">マスターZ</p>
+            <p class="text-sm" style="color:rgba(255,255,255,.6);">方針設計と業務改革の統括 — チーム全体の戦略を見立て、支援の全体像を設計します</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal rounded-xl p-5" style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs" style="background:rgba(94,248,244,.15); color:#5ef8f4;">秘書</div>
+          <span class="font-bold text-white">あい</span>
+        </div>
+        <p class="text-xs" style="color:rgba(255,255,255,.6);">予定・連絡・情報整理のサポート</p>
+      </div>
+      <div class="reveal rounded-xl p-5" style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs" style="background:rgba(94,248,244,.15); color:#5ef8f4;">編集</div>
+          <span class="font-bold text-white">ことは</span>
+        </div>
+        <p class="text-xs" style="color:rgba(255,255,255,.6);">文章・構成・発信内容の整備</p>
+      </div>
+      <div class="reveal rounded-xl p-5" style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs" style="background:rgba(94,248,244,.15); color:#5ef8f4;">調査</div>
+          <span class="font-bold text-white">りさ</span>
+        </div>
+        <p class="text-xs" style="color:rgba(255,255,255,.6);">リサーチ・比較・情報整理</p>
+      </div>
+      <div class="reveal rounded-xl p-5" style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs" style="background:rgba(94,248,244,.15); color:#5ef8f4;">自動</div>
+          <span class="font-bold text-white">はっく</span>
+        </div>
+        <p class="text-xs" style="color:rgba(255,255,255,.6);">繰り返し作業の効率化</p>
+      </div>
+      <div class="reveal rounded-xl p-5" style="background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs" style="background:rgba(94,248,244,.15); color:#5ef8f4;">設計</div>
+          <span class="font-bold text-white">さとる</span>
+        </div>
+        <p class="text-xs" style="color:rgba(255,255,255,.6);">業務フローと仕組み化の設計</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE ===== -->
+<section class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--teal); letter-spacing:.2em;">Service</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-4" style="color:var(--teal-dark); font-family:'Inter','Noto Sans JP',sans-serif;">
+        必要な支援を、選びやすく。
+      </h2>
+      <p class="text-base" style="color:var(--muted);">AI活用に必要な工程を、単発の助言ではなく運用まで見据えて整理します。</p>
+    </div>
+
+    <div class="reveal overflow-x-auto rounded-2xl border" style="border-color:var(--line);">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr style="background:var(--teal-dark);">
+            <th class="text-left px-6 py-4 text-white font-bold">支援内容</th>
+            <th class="px-6 py-4 text-white font-bold text-center">設計</th>
+            <th class="px-6 py-4 text-white font-bold text-center">実務</th>
+            <th class="px-6 py-4 text-white font-bold text-center">改善</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t" style="border-color:var(--line);">
+            <td class="px-6 py-4 font-medium" style="color:var(--ink);">業務棚卸し</td>
+            <td class="px-6 py-4 text-center font-bold" style="color:var(--teal);">○</td>
+            <td class="px-6 py-4 text-center font-bold" style="color:var(--teal);">○</td>
+            <td class="px-6 py-4 text-center font-bold" style="color:var(--teal);">○</td>
+          </tr>
+          <tr class="border-t" style="border-color:var(--line); background:var(--mint);">
+            <td class="px-6 py-4 font-medium" style="color:var(--ink);">文章・調査</td>
+            <td class="px-6 py-4 text-center font-bold" style="color:var(--teal);">○</td>
+            <td class="px-6 py-4 text-center font-bold" style="color:var(--teal);">○</td>
+            <td class="px-6 py-4 text-center font-bold" style="color:var(--teal);">○</td>
+          </tr>
+          <tr class="border-t" style="border-color:var(--line);">
+            <td class="px-6 py-4 font-medium" style="color:var(--ink);">自動化</td>
+            <td class="px-6 py-4 text-center font-bold" style="color:var(--teal);">○</td>
+            <td class="px-6 py-4 text-center font-bold" style="color:var(--teal);">○</td>
+            <td class="px-6 py-4 text-center text-sm" style="color:var(--muted);">要相談</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="py-24" style="background:var(--mint);">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--teal); letter-spacing:.2em;">FAQ</p>
+      <h2 class="text-3xl md:text-4xl font-black" style="color:var(--teal-dark); font-family:'Inter','Noto Sans JP',sans-serif;">
+        よくある質問
+      </h2>
+    </div>
+
+    <div class="space-y-3 reveal">
+      <details class="rounded-xl bg-white border overflow-hidden" style="border-color:var(--line);">
+        <summary class="px-6 py-5 cursor-pointer font-bold list-none flex justify-between items-center" style="color:var(--teal-dark);">
+          何から相談すればいいですか？
+          <span class="text-xl" style="color:var(--teal);">＋</span>
+        </summary>
+        <div class="px-6 pb-5 text-sm" style="color:var(--muted);">まだ整理できていなくても大丈夫です。時間がかかっている作業、AIで変えたい業務、属人化している工程から相談できます。</div>
+      </details>
+      <details class="rounded-xl bg-white border overflow-hidden" style="border-color:var(--line);">
+        <summary class="px-6 py-5 cursor-pointer font-bold list-none flex justify-between items-center" style="color:var(--teal-dark);">
+          小規模な相談でも依頼できますか？
+          <span class="text-xl" style="color:var(--teal);">＋</span>
+        </summary>
+        <div class="px-6 pb-5 text-sm" style="color:var(--muted);">はい。まずは一つの作業改善、文章作成、リサーチ、自動化の一部から始められます。</div>
+      </details>
+      <details class="rounded-xl bg-white border overflow-hidden" style="border-color:var(--line);">
+        <summary class="px-6 py-5 cursor-pointer font-bold list-none flex justify-between items-center" style="color:var(--teal-dark);">
+          料金は決まっていますか？
+          <span class="text-xl" style="color:var(--teal);">＋</span>
+        </summary>
+        <div class="px-6 pb-5 text-sm" style="color:var(--muted);">現時点では未設定です。支援範囲に応じて相談してください。</div>
+      </details>
+      <details class="rounded-xl bg-white border overflow-hidden" style="border-color:var(--line);">
+        <summary class="px-6 py-5 cursor-pointer font-bold list-none flex justify-between items-center" style="color:var(--teal-dark);">
+          問い合わせ先はどこですか？
+          <span class="text-xl" style="color:var(--teal);">＋</span>
+        </summary>
+        <div class="px-6 pb-5 text-sm" style="color:var(--muted);"><a href="mailto:zodiacm369@gmail.com" style="color:var(--teal);">zodiacm369@gmail.com</a> までメールでお問い合わせください。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="py-28 text-center bg-white">
+  <div class="max-w-2xl mx-auto px-6 reveal">
+    <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color:var(--teal); letter-spacing:.2em;">Entry</p>
+    <h2 class="text-3xl md:text-4xl font-black mb-6" style="color:var(--teal-dark); font-family:'Inter','Noto Sans JP',sans-serif;">
+      AIを、使って終わりにしない。
+    </h2>
+    <p class="text-base mb-10" style="color:var(--muted);">業務が変わるところまで、AIカンパニーが並走します。</p>
+    <a href="mailto:zodiacm369@gmail.com?subject=AI活用支援の相談"
+       class="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-base transition hover:opacity-90 hover:-translate-y-0.5"
+       style="background:var(--teal); color:white; box-shadow:0 16px 40px rgba(0,141,143,.25);">
+      AI活用を相談する →
+    </a>
+    <p class="mt-6 text-sm" style="color:var(--muted);">コーポレートサイト：<a href="https://maloncafe.shop/" target="_blank" rel="noopener" style="color:var(--teal);">maloncafe.shop</a></p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="py-10 px-6 text-sm" style="background:var(--teal-deep); color:rgba(255,255,255,.7);">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <span class="font-black text-white" style="font-family:'Inter',sans-serif;">AICOMPANY</span>
+    <span>代表: マスターZ ／ 問い合わせ: <a href="mailto:zodiacm369@gmail.com" style="color:#5ef8f4;">zodiacm369@gmail.com</a></span>
+    <span>© 2026 AIカンパニー</span>
+  </div>
+</footer>
+
+<!-- ===== STICKY CTA ===== -->
+<div class="sticky-cta">
+  <a href="mailto:zodiacm369@gmail.com?subject=AI活用支援の相談"
+     class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm text-white transition hover:opacity-90 shadow-xl"
+     style="background:var(--teal); box-shadow:0 8px 24px rgba(0,141,143,.35);">
+    AI活用を相談する →
+  </a>
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // FAQ chevron toggle
+  document.querySelectorAll('details').forEach(d => {
+    d.addEventListener('toggle', () => {
+      const icon = d.querySelector('summary span');
+      if (icon) icon.textContent = d.open ? '－' : '＋';
+    });
+  });
+</script>
+
+</body>
+</html>
